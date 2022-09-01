@@ -1,0 +1,74 @@
+:root {
+  font-family: Ubuntu, Tahoma, Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  background-color: rgb(219, 219, 219);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+.ace_print-margin {
+  visibility: hidden !important;
+}
+
+.jspond-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  background-color: rgb(219, 219, 219);
+}
+
+.jspond-result {
+  padding-top: 6px;
+}
+
+.jspond-result-header {
+  padding-bottom: 6px;
+  font-weight: 500;
+}
+
+.jspond-editor {
+  position: relative;
+}
+.jspond-body-play {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  cursor: pointer;
+}
+.jspond-body-play > img:hover {
+  transform: scale(1.2);
+}
+.jspond-body-play > img {
+  width: 56px;
+  height: 56px;
+  transition: transform 0.2s;
+}
+
+@keyframes playmove {
+  from {
+    width: 56px;
+    height: 56px;
+  }
+  to {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+code,
+pre {
+  font-family: Consolas, Monaco, 'Andale Mono', 'Lucida Console', monospace;
+  hyphens: none;
+}
+.jspond-header-credits {
+  display: flex;
+  gap: 5px;
+}
+.jspond-header-title {
+  font-weight: 500;
+}

@@ -1,0 +1,25 @@
+{
+  "name": "jspond",
+  "private": true,
+  "version": "0.0.0",
+  "author": {
+    "name": "Pradeep Mishra",
+    "email": "pradeep23oct@gmail.com"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "ace-builds": "^1.10.0",
+    "preact": "^10.10.1",
+    "react-ace": "^10.1.0",
+    "zustand": "^4.1.1"
+  },
+  "devDependencies": {
+    "@preact/preset-vite": "^2.3.0",
+    "vite": "^3.0.7"
+  }
+}
