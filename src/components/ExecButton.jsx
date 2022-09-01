@@ -16,6 +16,7 @@ const formatErrorResponse = (e) => {
 
 const execFunc = async (code) => {
   code = removeComment(code);
+  console.log('code is', code);
   try {
     if (code.includes('await ')) {
       const res = await eval(`
@@ -31,6 +32,17 @@ const execFunc = async (code) => {
         return formatErrorResponse(res);
       }
       return res;
+    } else if (code.match(/;\s*return\s+|^\s*return\s+/gm)) {
+      console.log('return found');
+      return eval(`
+        (function(){
+         try{
+          ${code}
+         }catch(e){
+          return e
+         }
+        })()
+      `);
     } else {
       return eval(code);
     }
