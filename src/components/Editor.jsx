@@ -13,7 +13,7 @@ const Editor = ({ code, setCode }) => {
       //onLoad={this.onLoad}
       onChange={setCode}
       width='100%'
-      fontSize={16}
+      fontSize={18}
       showPrintMargin={true}
       showGutter={true}
       highlightActiveLine={true}
