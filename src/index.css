@@ -1,7 +1,6 @@
 :root {
   font-family: Ubuntu, Tahoma, Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
-  line-height: 24px;
   font-weight: 400;
   background-color: rgb(219, 219, 219);
   font-synthesis: none;
@@ -27,7 +26,6 @@
 }
 
 .jspond-result-header {
-  padding-bottom: 6px;
   font-weight: 500;
 }
 
@@ -61,9 +59,13 @@
 }
 
 code,
-pre {
+pre,
+.jspond-result-header {
   font-family: Consolas, Monaco, 'Andale Mono', 'Lucida Console', monospace;
   hyphens: none;
+}
+pre {
+  margin-top: 2px;
 }
 .jspond-header-credits {
   display: flex;
