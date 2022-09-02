@@ -16,7 +16,12 @@ export function App() {
       <Header />
       <div className='jspond-body'>
         <div className='jspond-editor'>
-          <Editor code={code} setCode={setCode} />
+          <Editor
+            code={code}
+            setCode={setCode}
+            setResult={setResult}
+            setPlayClicked={setPlayClicked}
+          />
           <ExecButton
             code={code}
             setResult={setResult}

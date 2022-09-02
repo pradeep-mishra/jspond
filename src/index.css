@@ -52,17 +52,6 @@
   transition: transform 0.2s;
 }
 
-@keyframes playmove {
-  from {
-    width: 56px;
-    height: 56px;
-  }
-  to {
-    width: 64px;
-    height: 64px;
-  }
-}
-
 code,
 pre,
 .jspond-result-header {
@@ -79,4 +68,13 @@ pre {
 .jspond-header-title {
   font-weight: 500;
   font-size: 1.1em;
+}
+.jspond-result-header-hint {
+  font-size: 0.6em;
+  vertical-align: middle;
+  margin-left: 15px;
+  font-weight: 300;
+  font-family: Ubuntu, Tahoma, Inter, Avenir, Helvetica, Arial, sans-serif;
+  align-items: center;
+  text-align: center;
 }
