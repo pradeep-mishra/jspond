@@ -11,37 +11,59 @@ const formatErrorResponse = (e) => {
     e.stack.indexOf('ExecButton.jsx') + 14
   )}`;
 };
+const log = console.log.bind(console);
+const warn = console.log.bind(console);
+const error = console.log.bind(console);
+const info = console.log.bind(console);
 
-const execFunc = async (code) => {
+const execFunc = async (code, putText) => {
   //console.log('code is', code);
+  const context = {
+    console: {
+      log: (...args) => {
+        putText('log', ...args);
+      },
+      info,
+      warn,
+      error,
+      _log: log
+    }
+  };
   try {
     if (code.includes('await ')) {
-      const res = await eval(`
-        (async function(){
+      const res = await function () {
+        return eval(`
+        (async function(self){
+         console = self.console; 
          try{
           ${code}
          }catch(e){
           return e
          }
-        })()
+        })(this)
       `);
+      }.call(context);
       if (res instanceof Error) {
         return formatErrorResponse(res);
       }
       return res;
     } else if (code.match(/;\s*return\s+|^\s*return\s+/gm)) {
-      console.log('return found');
-      return eval(`
-        (function(){
+      return function () {
+        return eval(`
+        (function(self){
+         console = self.console; 
          try{
           ${code}
          }catch(e){
           return e
          }
-        })()
+        })(this)
       `);
+      }.call(context);
     } else {
-      return eval(code);
+      return function (code) {
+        return eval(code);
+      }.call(context, `console = this.console;\n${code} `);
     }
   } catch (e) {
     return formatErrorResponse(e);
