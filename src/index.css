@@ -13,6 +13,10 @@
 .ace_print-margin {
   visibility: hidden !important;
 }
+.jspond-wrapper,
+.jspond-body {
+  min-height: 100vh;
+}
 
 .jspond-header {
   display: flex;
@@ -31,6 +35,7 @@
 
 .jspond-editor {
   position: relative;
+  height: 70vh;
 }
 .jspond-body-play {
   position: absolute;

@@ -15,8 +15,7 @@ const formatErrorResponse = (e) => {
 };
 
 const execFunc = async (code) => {
-  code = removeComment(code);
-  console.log('code is', code);
+  //console.log('code is', code);
   try {
     if (code.includes('await ')) {
       const res = await eval(`
@@ -52,8 +51,12 @@ const execFunc = async (code) => {
 };
 const ExecButton = ({ code, setResult, setPlayClicked }) => {
   const execCode = async () => {
+    let codeVal = removeComment(code);
+    if (!codeVal) {
+      return;
+    }
     setPlayClicked((c) => c + 1);
-    let response = await execFunc(code);
+    let response = await execFunc(codeVal);
     //console.log('response is', response);
     response =
       typeof response !== 'string'

@@ -10,20 +10,17 @@ const Editor = ({ code, setCode }) => {
       mode='javascript'
       theme='monokai'
       name='jspond'
-      //onLoad={this.onLoad}
       onChange={setCode}
-      width='100%'
+      width='auto'
+      height='100%'
+      //maxLines={20}
+      //minLines={20}
       fontSize={18}
       showPrintMargin={true}
       showGutter={true}
       highlightActiveLine={true}
-      maxLines={20}
-      minLines={20}
       value={code}
       setOptions={{
-        enableBasicAutocompletion: false,
-        enableLiveAutocompletion: false,
-        enableSnippets: false,
         showLineNumbers: true,
         tabSize: 2
       }}
