@@ -4,7 +4,7 @@ const Result = ({ result, playClicked }) => {
       <div className='jspond-result-header'>
         Output: ({playClicked})
         <span className='jspond-result-header-hint'>
-          (Cmd|Ctrl + Enter to execute)
+          (Cmd/Ctrl + Enter to execute)
         </span>
       </div>
       <div className='jspond-result-content'>
