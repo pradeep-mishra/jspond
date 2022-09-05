@@ -25,13 +25,18 @@ const Editor = ({ code, setCode, setResult, setPlayClicked }) => {
     setResult(`${output}\n${response ?? ''}`);
   };
 
+  const checkCode = (code) => {
+    //console.log('code is', code);
+    code = code.replace(/\“/gm, '"').replace(/\‘/gm, "'");
+    setCode(code);
+  };
   return (
     <AceEditor
       placeholder='put your js snippet here'
       mode='javascript'
       theme='monokai'
       name='jspond'
-      onChange={setCode}
+      onChange={checkCode}
       width='auto'
       height='100%'
       //maxLines={20}
