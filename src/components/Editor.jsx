@@ -27,7 +27,7 @@ const Editor = ({ code, setCode, setResult, setPlayClicked }) => {
 
   const checkCode = (code) => {
     //console.log('code is', code);
-    code = code.replace(/\“/gm, '"').replace(/\‘/gm, "'");
+    code = code.replace(/“|”/gm, '"').replace(/‘|’/gm, "'");
     setCode(code);
   };
   return (
