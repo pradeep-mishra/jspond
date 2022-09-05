@@ -18,6 +18,7 @@ const info = console.log.bind(console);
 
 const execFunc = async (code, putText) => {
   //console.log('code is', code);
+  code = code.replace(/\“/gm, '"').replace(/\‘/gm, "'");
   const context = {
     console: {
       log: (...args) => {
